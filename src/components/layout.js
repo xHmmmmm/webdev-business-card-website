@@ -13,21 +13,21 @@ import fonts from 'styles/fonts.css'
 
 const Wrapper = styled.div`
     overflow-y: auto;
+    scroll-behavior: smooth;
 `
 
 const MainContent = styled.main`
 
 `
 
-function Layout({ children })
+function Layout({ children, currentId })
 {
-
 
     return (
         <ThemeProvider theme={theme}>
             <ViewContextProvider>
                 <GlobalStyle />
-                <Header />
+                <Header currentId={currentId} />
                 <Wrapper>
                     <MainContent>{children}</MainContent>
                     <Footer />

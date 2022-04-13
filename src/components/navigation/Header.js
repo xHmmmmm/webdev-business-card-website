@@ -9,12 +9,12 @@ const Wrapper = styled.header`
     grid-template-rows: 40px 70px;
 `
 
-export default function Header()
+export default function Header({ currentId })
 {
     return (
         <Wrapper>
             <Topbar />
-            <Navbar />
+            <Navbar currentId={currentId} />
         </Wrapper>
     )
 }

@@ -45,6 +45,12 @@ export const GlobalStyle = createGlobalStyle`
         cursor: pointer;
     }
 
+    input, textarea
+    {
+        outline: none;
+        border: none;
+    }
+
     a
     {
         cursor: pointer;

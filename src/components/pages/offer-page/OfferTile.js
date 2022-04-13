@@ -4,7 +4,6 @@ import styled from "styled-components"
 const Wrapper = styled.div`
     display: grid;
     grid-template-rows: 1fr min-content;
-    gap: 2.5em;
     gap: clamp(1.5rem, 1.5vw, 2rem);
 `
 

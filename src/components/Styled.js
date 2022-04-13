@@ -1,10 +1,9 @@
 import styled from "styled-components"
 
 export const ContentSection = styled.section`
-    display: grid;
+    display: flex;
     justify-content: center;
-    grid-template-rows: min-content 1fr;
-    `
+`
 
 export const ContentWrapper = styled.div`
     display: grid;

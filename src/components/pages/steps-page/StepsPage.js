@@ -6,7 +6,6 @@ import Step from "components/pages/steps-page/Step";
 
 const StyledSection = styled(ContentSection)`
     background-color: ${({ theme }) => theme.colors.liteGrayBg};
-    display: grid;
 `
 
 const ContentContainer = styled(ContentWrapper)`
@@ -20,10 +19,10 @@ const ContentContainer = styled(ContentWrapper)`
     padding-bottom: 6em;
 `
 
-export default function StepsPage()
+const StepsPage = React.forwardRef((props, ref) =>
 {
     return (
-        <StyledSection>
+        <StyledSection id='steps' ref={ref}>
             <ContentContainer>
                 <Heading title='JAK ZAMÓWIĆ?' subtitle='Proces zamawiania krok po kroku.' text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed diam fermentum, pellentesque nulla a, euismod arcu. Nullam auctor tortor condimentum pretium ultrices.' />
 
@@ -40,4 +39,6 @@ export default function StepsPage()
             </ContentContainer>
         </StyledSection>
     )
-}
+})
+
+export default StepsPage

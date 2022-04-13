@@ -7,7 +7,6 @@ import { RiPencilRuler2Line, RiCodeLine, RiToolsFill } from 'react-icons/ri'
 
 const StyledSection = styled(ContentSection)`
     background-color: ${({ theme }) => theme.colors.whiteBg};
-    display: grid;
 `
 
 const ContentContainer = styled(ContentWrapper)`
@@ -19,10 +18,10 @@ const ContentContainer = styled(ContentWrapper)`
     gap: 3em clamp(1.2rem, 2vw, 2rem);
 `
 
-export default function OfferPage()
+const OfferPage = React.forwardRef((props, ref) =>
 {
     return (
-        <StyledSection>
+        <StyledSection id='offers' ref={ref}>
             <ContentContainer>
                 <Heading title='OFERTA' subtitle='Usługi dopasowane do Twoich potrzeb.' text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed diam fermentum, pellentesque nulla a, euismod arcu. Nullam auctor tortor condimentum pretium ultrices.' />
 
@@ -32,4 +31,6 @@ export default function OfferPage()
             </ContentContainer>
         </StyledSection>
     )
-}
+})
+
+export default OfferPage
