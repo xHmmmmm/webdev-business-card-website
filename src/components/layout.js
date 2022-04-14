@@ -14,6 +14,10 @@ import fonts from 'styles/fonts.css'
 const Wrapper = styled.div`
     overflow-y: auto;
     scroll-behavior: smooth;
+
+    @media (max-width: ${({ theme }) => theme.standardScreen}) {
+        /* font-size: 0.8rem; */
+    }
 `
 
 const MainContent = styled.main`

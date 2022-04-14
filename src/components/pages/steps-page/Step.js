@@ -7,13 +7,19 @@ const Wrapper = styled.div`
     justify-content: flex-start;
     align-items: center;
     gap: 0.8em;
+    
+    @media (max-width: ${({ theme }) => theme.mobileScreen})
+    {
+        max-width: ${({ theme }) => theme.narrowMobileScreen};
+        width: 100%;
+    }
 `
 
 const StepNumber = styled.p`
-    padding: 0.7em 0.8em;
     background-color: ${({ theme }) => theme.colors.accent};
     color: ${({ theme }) => theme.colors.liteFont};
-    font-size: 1.3em;
+    font-size: clamp(1.1em, 1.1vw, 1.6em);
+    padding: clamp(0.3em, 0.7vw, 0.7em);
     font-weight: 600;
     border-radius: 4px;
 `
@@ -21,7 +27,7 @@ const StepNumber = styled.p`
 const Title = styled.h3`
     text-align: center;
     white-space: pre-wrap;
-    font-size: clamp(0.7rem, 1.85vw, 1.4rem);
+    font-size: clamp(1.1em, 1.1vw, 2em);
     font-weight: 900;
     width: 80%;
 `
@@ -29,7 +35,7 @@ const Title = styled.h3`
 const Text = styled.p`
     white-space: pre-wrap;
     line-height: 1.4;
-    font-size: clamp(0.5rem, 1.35vw, 1rem);
+    font-size: clamp(0.7em, 0.8vw, 1.5em);
     font-weight: 400;
     text-align: center;
     width: 85%;

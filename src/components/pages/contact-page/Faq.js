@@ -13,7 +13,7 @@ const Title = styled.h3`
     align-items: center;
     justify-content: center;
     font-weight: 900;
-    font-size: 1.8em;
+    font-size: clamp(1em, 2vw, 1.8em);
     white-space: nowrap;
 
     ::before, ::after

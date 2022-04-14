@@ -10,12 +10,22 @@ const StyledSection = styled(ContentSection)`
 `
 
 const ContentContainer = styled(ContentWrapper)`
-    grid-template-columns: 1fr 0.8fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: min-content 1fr;
     grid-template-areas: 
     'heading heading'
     'faq form';
-    gap: 3em clamp(5rem, 2vw, 7rem);
+    gap: 3em clamp(2em, 3vw, 7em);
+
+    @media (max-width: ${({ theme }) => theme.narrowHdScreen})
+    {
+        grid-template-columns: 1fr;
+        grid-template-rows: min-content 1fr 1fr;
+        grid-template-areas: 
+        'heading'
+        'faq'
+        'form';
+    }
 `
 
 const ContactPage = React.forwardRef((props, ref) =>

@@ -15,8 +15,32 @@ const ContentContainer = styled(ContentWrapper)`
     'heading heading heading'
     'step step step'
     'step step step';
-    gap: 6em 2.5em;
-    padding-bottom: 6em;
+    gap: 3em 2.5em;
+
+    @media (max-width: ${({ theme }) => theme.narrowHdScreen})
+    {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: min-content repeat(3, 1fr);
+        grid-template-areas: 
+        'heading heading'
+        'step step'
+        'step step'
+        'step step';
+    }
+
+    @media (max-width: ${({ theme }) => theme.mobileScreen})
+    {
+        grid-template-columns: 1fr;
+        grid-template-rows: min-content repeat(6, 1fr);
+        grid-template-areas: 
+        'heading'
+        'step'
+        'step'
+        'step'
+        'step'
+        'step'
+        'step'
+    }
 `
 
 const StepsPage = React.forwardRef((props, ref) =>

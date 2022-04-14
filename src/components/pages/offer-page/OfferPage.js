@@ -4,6 +4,7 @@ import Heading from 'components/Heading';
 import { ContentSection, ContentWrapper } from "components/Styled";
 import OfferTile from 'components/pages/offer-page/OfferTile';
 import { RiPencilRuler2Line, RiCodeLine, RiToolsFill } from 'react-icons/ri'
+import { useView } from 'contexts/ViewContext';
 
 const StyledSection = styled(ContentSection)`
     background-color: ${({ theme }) => theme.colors.whiteBg};
@@ -15,11 +16,25 @@ const ContentContainer = styled(ContentWrapper)`
     grid-template-areas: 
     'heading heading heading'
     'tile tile tile';
-    gap: 3em clamp(1.2rem, 2vw, 2rem);
+    gap: 3em clamp(1.2em, 2vw, 2em);
+
+    @media (max-width: ${({ theme }) => theme.mobileScreen})
+    {
+        grid-template-columns: 1fr;
+        grid-template-rows: min-content 1fr 1fr 1fr;
+        grid-template-areas: 
+        'heading'
+        'tile'
+        'tile'
+        'tile';
+        row-gap: 2em;
+    }
 `
 
 const OfferPage = React.forwardRef((props, ref) =>
 {
+    const { isMobile } = useView()
+
     return (
         <StyledSection id='offers' ref={ref}>
             <ContentContainer>
@@ -27,7 +42,9 @@ const OfferPage = React.forwardRef((props, ref) =>
 
                 <OfferTile title='PROJEKT STRONY INTERNETOWEJ' text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed diam fermentum, pellentesque nulla a, euismod arcu. Nullam auctor tortor condimentum pretium ultrices.' icon={<RiPencilRuler2Line />} />
                 <OfferTile title='WYKONANIE STRONY INTERNETOWEJ' text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed diam fermentum, pellentesque nulla a, euismod arcu. Nullam auctor tortor condimentum pretium ultrices.' icon={<RiCodeLine />} />
-                <OfferTile title={`UTRZYMANIE\nI ROZWÓJ`} text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed diam fermentum, pellentesque nulla a, euismod arcu. Nullam auctor tortor condimentum pretium ultrices.' icon={<RiToolsFill />} />
+                {isMobile ?
+                    <OfferTile title={`UTRZYMANIE I ROZWÓJ`} text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed diam fermentum, pellentesque nulla a, euismod arcu. Nullam auctor tortor condimentum pretium ultrices.' icon={<RiToolsFill />} /> :
+                    <OfferTile title={`UTRZYMANIE\nI ROZWÓJ`} text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed diam fermentum, pellentesque nulla a, euismod arcu. Nullam auctor tortor condimentum pretium ultrices.' icon={<RiToolsFill />} />}
             </ContentContainer>
         </StyledSection>
     )

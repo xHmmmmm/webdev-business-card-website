@@ -7,6 +7,7 @@ const Wrapper = styled.div`
 
 export default function Topbar()
 {
+
     return (
         <Wrapper>
 

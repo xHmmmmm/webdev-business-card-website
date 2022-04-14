@@ -9,7 +9,7 @@ const Wrapper = styled.div`
     grid-auto-rows: min-content;
     grid-auto-flow: row;
     gap: 0.7em;
-    padding: 1em;
+    padding:  1em;
     border-radius: 4px;
     border: 2px ${({ theme }) => theme.colors.liteGrayBg} solid;
     align-items: center;
@@ -18,14 +18,10 @@ const Wrapper = styled.div`
 
 const QuestionText = styled.p`
     font-weight: 700;
-    font-size: 1.2em;
+    font-size: clamp(1em, 1.8vw, 1.2em);
     overflow: ${({ isOpen }) => !isOpen && 'hidden'};
     white-space: ${({ isOpen }) => !isOpen && 'nowrap'};
     text-overflow: ${({ isOpen }) => !isOpen && 'ellipsis'};
-    
-    /* overflow: hidden; */
-    /* white-space: nowrap; */
-    /* text-overflow: ellipsis; */
 `
 
 const ArrowIcon = styled(RiArrowUpSLine)`
@@ -36,7 +32,7 @@ const ArrowIcon = styled(RiArrowUpSLine)`
 
 const AnswerText = styled.p`
     font-weight: 500;
-    font-size: 1.1em;
+    font-size: clamp(0.8em, 1.4vw, 1.1em);
     line-height: 1.4;
     grid-column: span 2;
     color: ${({ theme }) => theme.colors.semiDarkFont};

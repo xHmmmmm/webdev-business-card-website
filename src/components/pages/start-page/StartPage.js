@@ -71,7 +71,7 @@ const Subtitle = styled.h2`
 `
 
 const StartButton = styled.button`
-    font-size: 2em;
+    font-size: 2.5em;
     padding: 0.8em 1.5em;
     background-color: ${({ theme }) => theme.colors.accent};
     font-weight: 700;

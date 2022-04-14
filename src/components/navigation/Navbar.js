@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useReducer } from 'react'
+import React, { useState, useEffect, useReducer, useLayoutEffect } from 'react'
 import styled from 'styled-components';
 
 
@@ -26,20 +26,37 @@ const Button = styled.button`
     }
 `
 
+let isScrolling = false
+
 export default function Navbar({ currentId })
 {
+    const [currentIdSelection, setCurrentIdSelection] = useState('start')
+
+    useLayoutEffect(() =>
+    {
+        console.log(currentId)
+        console.log(currentIdSelection)
+        if (currentId !== currentIdSelection && !isScrolling) 
+        {
+            setCurrentIdSelection(currentId)
+        }
+        isScrolling = false
+    }, [currentId])
+
     function scrollToSection(id)
     {
+        isScrolling = true;
+        setCurrentIdSelection(id)
         const element = document.getElementById(id)
         element.scrollIntoView()
     }
 
     return (
         <Navigation>
-            <Button isCurrent={currentId === 'start'} onClick={() => scrollToSection('start')}>START</Button>
-            <Button isCurrent={currentId === 'offers'} onClick={() => scrollToSection('offers')}>OFERTA</Button>
-            <Button isCurrent={currentId === 'steps'} onClick={() => scrollToSection('steps')}>JAK ZAMÓWIĆ?</Button>
-            <Button isCurrent={currentId === 'contact'} onClick={() => scrollToSection('contact')}>KONTAKT</Button>
+            <Button isCurrent={currentIdSelection === 'start'} onClick={() => scrollToSection('start')}>START</Button>
+            <Button isCurrent={currentIdSelection === 'offers'} onClick={() => scrollToSection('offers')}>OFERTA</Button>
+            <Button isCurrent={currentIdSelection === 'steps'} onClick={() => scrollToSection('steps')}>JAK ZAMÓWIĆ?</Button>
+            <Button isCurrent={currentIdSelection === 'contact'} onClick={() => scrollToSection('contact')}>KONTAKT</Button>
         </Navigation>
     )
 }
