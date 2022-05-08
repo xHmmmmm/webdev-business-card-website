@@ -49,10 +49,10 @@ export default function Question({ id, openId, question, answer, toggleOpen })
     }, [openId])
 
     return (
-        <Wrapper isOpen={isOpen} onClick={() => toggleOpen(id)}>
+        <Wrapper isOpen={isOpen} onClick={() => toggleOpen(id)} >
             <QuestionText isOpen={isOpen}>{question}</QuestionText>
             <ArrowIcon isOpen={isOpen} />
-            {isOpen && <AnswerText>{answer}</AnswerText>}
+            {isOpen && <AnswerText>{answer}</AnswerText >}
         </Wrapper>
     )
 }

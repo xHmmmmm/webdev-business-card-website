@@ -1,8 +1,10 @@
 import React, { useState, useEffect, useReducer, useLayoutEffect } from 'react'
 import styled from 'styled-components';
+import { scrollTo } from "../../utils";
 
 
 const Navigation = styled.nav`
+    min-height: 3.8em;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -18,7 +20,6 @@ const Button = styled.button`
     font-weight: 600;
     background-color: ${({ theme }) => theme.colors.whiteBg};
     transition: color 0.2s ease-in-out;
-    color: ${({ isCurrent, theme }) => isCurrent && theme.colors.accent};
 
     :hover
     {
@@ -26,37 +27,16 @@ const Button = styled.button`
     }
 `
 
-let isScrolling = false
-
-export default function Navbar({ currentId })
+export default function Navbar()
 {
-    const [currentIdSelection, setCurrentIdSelection] = useState('start')
-
-    useLayoutEffect(() =>
-    {
-        console.log(currentId)
-        console.log(currentIdSelection)
-        if (currentId !== currentIdSelection && !isScrolling) 
-        {
-            setCurrentIdSelection(currentId)
-        }
-        isScrolling = false
-    }, [currentId])
-
-    function scrollToSection(id)
-    {
-        isScrolling = true;
-        setCurrentIdSelection(id)
-        const element = document.getElementById(id)
-        element.scrollIntoView()
-    }
 
     return (
         <Navigation>
-            <Button isCurrent={currentIdSelection === 'start'} onClick={() => scrollToSection('start')}>START</Button>
-            <Button isCurrent={currentIdSelection === 'offers'} onClick={() => scrollToSection('offers')}>OFERTA</Button>
-            <Button isCurrent={currentIdSelection === 'steps'} onClick={() => scrollToSection('steps')}>JAK ZAMÓWIĆ?</Button>
-            <Button isCurrent={currentIdSelection === 'contact'} onClick={() => scrollToSection('contact')}>KONTAKT</Button>
+
+            <Button onClick={() => scrollTo('start')}>START</Button>
+            <Button onClick={() => scrollTo('offer')}>OFERTA</Button>
+            <Button onClick={() => scrollTo('steps')}>JAK ZAMÓWIĆ?</Button>
+            <Button onClick={() => scrollTo('contact')}>KONTAKT</Button>
         </Navigation>
     )
 }

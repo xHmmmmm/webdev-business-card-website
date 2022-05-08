@@ -1,12 +1,13 @@
 import React, { useState, useEffect, useReducer } from 'react'
 import styled from "styled-components"
 import Navbar from "components/navigation/Navbar"
+import MobileNavigation from "components/navigation/MobileNavigation";
 import Topbar from "components/navigation/Topbar"
+import { useView } from 'contexts/ViewContext';
 
 const Wrapper = styled.header`
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: 2em 3.8em;
+    display: flex;
+    flex-direction: column;
     font-size: 1.1em;
 
     @media (max-width: ${({ theme }) => theme.standardScreen}) 
@@ -20,12 +21,14 @@ const Wrapper = styled.header`
     }
 `
 
-export default function Header({ currentId })
+export default function Header()
 {
+    const { isMobile } = useView()
+
     return (
         <Wrapper>
-            <Topbar />
-            <Navbar currentId={currentId} />
+            {isMobile || <Topbar />}
+            {isMobile ? <MobileNavigation /> : <Navbar />}
         </Wrapper>
     )
 }

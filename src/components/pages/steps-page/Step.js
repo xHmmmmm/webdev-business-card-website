@@ -7,12 +7,6 @@ const Wrapper = styled.div`
     justify-content: flex-start;
     align-items: center;
     gap: 0.8em;
-    
-    @media (max-width: ${({ theme }) => theme.mobileScreen})
-    {
-        max-width: ${({ theme }) => theme.narrowMobileScreen};
-        width: 100%;
-    }
 `
 
 const StepNumber = styled.p`

@@ -14,24 +14,21 @@ import fonts from 'styles/fonts.css'
 const Wrapper = styled.div`
     overflow-y: auto;
     scroll-behavior: smooth;
-
-    @media (max-width: ${({ theme }) => theme.standardScreen}) {
-        /* font-size: 0.8rem; */
-    }
+    scroll-padding-top: 0;
 `
 
 const MainContent = styled.main`
 
 `
 
-function Layout({ children, currentId })
+function Layout({ children })
 {
 
     return (
         <ThemeProvider theme={theme}>
             <ViewContextProvider>
                 <GlobalStyle />
-                <Header currentId={currentId} />
+                <Header />
                 <Wrapper>
                     <MainContent>{children}</MainContent>
                     <Footer />

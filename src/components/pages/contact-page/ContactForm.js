@@ -4,7 +4,6 @@ import styled from "styled-components"
 const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
-    /* grid-auto-rows: max-content; */
     gap: clamp(0.5em, 1vw, 0.7em);
 
     @media (max-width: ${({ theme }) => theme.narrowHdScreen})

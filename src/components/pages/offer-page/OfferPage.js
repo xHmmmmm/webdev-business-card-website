@@ -31,12 +31,12 @@ const ContentContainer = styled(ContentWrapper)`
     }
 `
 
-const OfferPage = React.forwardRef((props, ref) =>
+export default function OfferPage()
 {
     const { isMobile } = useView()
 
     return (
-        <StyledSection id='offers' ref={ref}>
+        <StyledSection id='offer'>
             <ContentContainer>
                 <Heading title='OFERTA' subtitle='Usługi dopasowane do Twoich potrzeb.' text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed diam fermentum, pellentesque nulla a, euismod arcu. Nullam auctor tortor condimentum pretium ultrices.' />
 
@@ -48,6 +48,4 @@ const OfferPage = React.forwardRef((props, ref) =>
             </ContentContainer>
         </StyledSection>
     )
-})
-
-export default OfferPage
+}

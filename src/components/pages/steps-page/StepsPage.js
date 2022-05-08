@@ -39,14 +39,14 @@ const ContentContainer = styled(ContentWrapper)`
         'step'
         'step'
         'step'
-        'step'
+        'step';
     }
 `
 
-const StepsPage = React.forwardRef((props, ref) =>
+export default function StepsPage()
 {
     return (
-        <StyledSection id='steps' ref={ref}>
+        <StyledSection id='steps'>
             <ContentContainer>
                 <Heading title='JAK ZAMÓWIĆ?' subtitle='Proces zamawiania krok po kroku.' text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed diam fermentum, pellentesque nulla a, euismod arcu. Nullam auctor tortor condimentum pretium ultrices.' />
 
@@ -63,6 +63,4 @@ const StepsPage = React.forwardRef((props, ref) =>
             </ContentContainer>
         </StyledSection>
     )
-})
-
-export default StepsPage
+}

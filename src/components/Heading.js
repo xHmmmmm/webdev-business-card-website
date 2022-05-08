@@ -26,17 +26,17 @@ const Wrapper = styled.div`
     }
 `
 
-const Title = styled.h1`
+const Title = styled.h2`
     grid-area: title;
     color: ${({ theme }) => theme.colors.accent};
-    font-weight: 400;
+    font-weight: 600;
 `
 
-const Subtitle = styled.h2`
+const Subtitle = styled.h3`
     grid-area: subtitle;
     font-size: clamp(1.3em, 1.2vw, 2.1em);
     color: ${({ theme }) => theme.colors.accent};
-    font-weight: 500;
+    font-weight: 400;
 `
 
 const Text = styled.p`

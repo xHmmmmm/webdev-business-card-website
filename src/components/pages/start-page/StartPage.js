@@ -2,24 +2,30 @@ import React, { useState, useEffect, useReducer } from 'react'
 import styled from "styled-components"
 import { StaticImage } from "gatsby-plugin-image"
 import { ContentSection, ContentWrapper } from "components/Styled";
+import { scrollTo } from "../../../utils";
 
 const StartSection = styled(ContentSection)`
     grid-area: content;
     max-height: calc(100vh - 110px);
     min-height: 70vh;
-    /* display: grid; */
-    /* grid-template-columns: 1fr 1fr; */
-    /* grid-template-rows: 1fr; */
     align-items: center;
     overflow: visible;
     background-color: ${({ theme }) => theme.colors.liteGrayBg};
+    min-width: 100%;
 
-    .main-image
+    @media (max-width: ${({ theme }) => theme.mobileScreen})
     {
-        img
+        min-height: 85vh;
+        .main-image
         {
-            height: 100%;
-            width: 100%;
+            order: -1;
+            max-height: 100%;
+            margin: 2rem;
+
+            img
+            {
+                aspect-ratio: 1;
+            }
         }
     }
 `
@@ -28,35 +34,29 @@ const ContentContainer = styled(ContentWrapper)`
     grid-template-columns: 1fr 1fr;
     align-items: center;
     gap: 3em;
+    
+    @media (max-width: ${({ theme }) => theme.mobileScreen})
+    {
+        max-height: 85vh;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        padding: 0;
+        place-items: center;
+    }
 `
-
-// const StartSection = styled.section`
-//     grid-area: content;
-//     height: calc(100vh - 110px);
-//     max-width: ${({ theme }) => theme.standardScreen};
-//     display: grid;
-//     grid-template-columns: 1fr 1fr;
-//     grid-template-rows: 1fr;
-//     align-items: center;
-//     overflow: visible;
-//     background-color: ${({ theme }) => theme.colors.liteGrayBg};
-
-//     .main-image
-//     {
-//         img
-//         {
-//             height: 90%;
-//             width: 90%;
-//         }
-//     }
-// `
 
 const TextWrapper = styled.div`
     display: grid;
     grid-template-columns: min-content;
     grid-auto-rows: min-content;
     gap: 1rem;
-    font-size: clamp(0.4rem, 0.4vw, 1rem);
+    font-size: clamp(0.4rem, 0.8vw, 0.7rem);
+    place-items: flex-start;
+
+    @media (max-width: ${({ theme }) => theme.mobileScreen})
+    {
+        place-items: center;
+    }
 `
 
 const Title = styled.h1`
@@ -77,7 +77,6 @@ const StartButton = styled.button`
     font-weight: 700;
     border-radius: 3px;
     transition: background-color 0.2s ease-in-out;
-    margin-right: auto;
     
     :hover
     {
@@ -85,10 +84,10 @@ const StartButton = styled.button`
     }
 `
 
-const StartPage = React.forwardRef((props, ref) =>
+export default function StartPage()
 {
     return (
-        <StartSection id='start' ref={ref}>
+        <StartSection id='start'>
             <ContentContainer>
 
                 <TextWrapper>
@@ -100,7 +99,7 @@ const StartPage = React.forwardRef((props, ref) =>
                         Zaprezentuj się swoim klientom<br />
                         od najlepszej strony. Pomożemy!
                     </Subtitle>
-                    <StartButton>Rozpocznij</StartButton>
+                    <StartButton onClick={() => scrollTo("offer")}>Rozpocznij</StartButton>
                 </TextWrapper>
 
                 <StaticImage className="main-image"
@@ -110,6 +109,4 @@ const StartPage = React.forwardRef((props, ref) =>
             </ContentContainer>
         </StartSection>
     )
-})
-
-export default StartPage
+}

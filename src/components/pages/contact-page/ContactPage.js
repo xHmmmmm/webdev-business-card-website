@@ -28,10 +28,10 @@ const ContentContainer = styled(ContentWrapper)`
     }
 `
 
-const ContactPage = React.forwardRef((props, ref) =>
+export default function ContactPage()
 {
     return (
-        <StyledSection id='contact' ref={ref}>
+        <StyledSection id='contact'>
             <ContentContainer>
                 <Heading title='KONTAKT' subtitle='Napisz do nas!' text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed diam fermentum, pellentesque nulla a, euismod arcu. Nullam auctor tortor condimentum pretium ultrices.' />
 
@@ -41,6 +41,4 @@ const ContactPage = React.forwardRef((props, ref) =>
             </ContentContainer>
         </StyledSection>
     )
-})
-
-export default ContactPage
+}

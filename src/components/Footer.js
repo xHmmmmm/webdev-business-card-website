@@ -6,32 +6,43 @@ import { RiMailSendLine, RiPhoneFill, RiRoadMapLine } from 'react-icons/ri'
 const StyledFooter = styled.footer`
     display: flex;
     justify-content: center;
+    align-items: center;
     height: 300px;
     background-color: ${({ theme }) => theme.colors.accent};
 `
 
 const ContentContainer = styled(ContentWrapper)`
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr min-content;
+    grid-auto-rows: min-content;
     grid-template-areas: 
     'copyright info'
     'imageNotice info';
     align-items: center;
     padding: 0 5em;
     gap: 0.7em;
+
+    @media (max-width: ${({ theme }) => theme.mobileScreen}) 
+    {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        'copyright'
+        'imageNotice'
+        'info';
+        place-items: center;
+    }
 `
 
 const CopyrightNotice = styled.p`
     grid-area: copyright;
-    font-size: 3.2em;
+    font-size: 2em;
     color: ${({ theme }) => theme.colors.liteFont};
     font-weight: 700;
-    margin-top: auto;
-    `
+    align-self: flex-end;
+`
 
 const ImageNotice = styled.p`
     grid-area: imageNotice;
-    font-size: 1.5em;
+    font-size: 1.2em;
     color: ${({ theme }) => theme.colors.liteFont};
     font-weight: 700;
     margin-bottom: auto;
@@ -42,14 +53,19 @@ const ContactInformation = styled.div`
     display: grid;
     grid-template-columns: min-content min-content;
     grid-auto-rows: min-content;
-    justify-self: flex-end;
-    gap: 1.5em;
+    gap: 1em;
 
     > svg
     {
-        font-size: 1.5rem;
-        margin-top: 0.1rem;
+        font-size: 1.5em;
+        margin-top: 0.1em;
         fill: ${({ theme }) => theme.colors.liteFont};
+    }
+
+    @media (max-width: ${({ theme }) => theme.mobileScreen}) 
+    {
+        gap: 0.5em;
+        margin-top: 2em;
     }
 `
 
