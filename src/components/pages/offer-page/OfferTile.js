@@ -6,6 +6,23 @@ const Wrapper = styled.div`
     grid-template-rows: 1fr min-content;
     gap: clamp(1em, 1.5vw, 2em);
 
+    @media(hover)
+    {            
+        :hover
+        {
+            p, svg
+            {
+                background-position: 0 -100%;
+            }
+
+            svg
+            {
+                fill: ${({ theme }) => theme.colors.accent};
+                transform: scale(1.2);
+            }
+        }
+    }
+
     @media (max-width: ${({ theme }) => theme.mobileScreen})
     {
         max-width: ${({ theme }) => theme.narrowMobileScreen};
@@ -27,7 +44,10 @@ const Tile = styled.div`
     
     > svg
     {
-        font-size: 3.5em;
+        font-size: 3.7em;
+        font-size: clamp(1em, 4vw, 5em);
+        transition: all 300ms ease;
+        transition-property: transform, fill;
     }
 
     @media (max-width: ${({ theme }) => theme.mobileScreen})
@@ -36,12 +56,21 @@ const Tile = styled.div`
     }
 `
 
-const Title = styled.h3`
+const Title = styled.p`
     text-align: center;
     white-space: pre-wrap;
-    font-size: clamp(0.7em, 1.5vw, 2.5em);
+    font-size: clamp(0.7em, 1.5vw, 2em);
     font-weight: 900;
+    font-family: Jost;
     width: 80%;
+    
+    background: linear-gradient(135deg, rgba(255,173,50,1) 50%, rgba(17,17,17,1) 50%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 220% 100%;
+    background-position: 100%;
+    transition: background-position 400ms ease;
 `
 
 const Text = styled.p`

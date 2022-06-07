@@ -12,7 +12,7 @@ const Navigation = styled.nav`
     background-color: ${({ theme }) => theme.colors.whiteBg};
     position: sticky;
     user-select: none;
-    box-shadow: 0px 0px 29px 10px rgba(0, 0, 0, 0.05);
+    box-shadow: 0px -30px 29px 10px rgba(0, 0, 0, 0.2);
 `
 
 const Button = styled.button`

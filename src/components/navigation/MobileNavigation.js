@@ -49,7 +49,7 @@ const ExpandButton = styled.button`
 const Menu = styled(motion.div)`
     display: flex;
     flex-direction: column;
-    gap: 0.9em;
+    gap: 0.7em;
     font-size: 1.3rem;
     bottom: 6.5rem;
     right: 1rem;
@@ -60,8 +60,9 @@ const Button = styled.button`
     pointer-events: initial;
     background-color: transparent;
     font-size: 1.1em;
-    font-weight: 600;
+    font-weight: 700;
     transition: color 0.2s ease-in;
+    font-family: Jost;
 `
 
 export default function MobileNavigation()

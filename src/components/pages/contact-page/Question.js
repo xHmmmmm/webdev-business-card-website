@@ -22,6 +22,7 @@ const QuestionText = styled.p`
     overflow: ${({ isOpen }) => !isOpen && 'hidden'};
     white-space: ${({ isOpen }) => !isOpen && 'nowrap'};
     text-overflow: ${({ isOpen }) => !isOpen && 'ellipsis'};
+    font-family: Jost;
 `
 
 const ArrowIcon = styled(RiArrowUpSLine)`

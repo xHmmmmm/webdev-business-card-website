@@ -15,8 +15,9 @@ const Wrapper = styled.div`
 `
 
 const Label = styled.label`
-    font-size: clamp(1em, 1.5vw, 1.3em);
+    font-size: clamp(1.1em, 1.5vw, 1.4em);
     font-weight: 700;
+    font-family: Jost;
 `
 
 const MessageType = styled.div`
@@ -27,12 +28,13 @@ const MessageType = styled.div`
 `
 
 const TypeButton = styled.button`
-    font-size: clamp(1em, 1vw, 1.5em);
+    font-size: clamp(1.1em, 1vw, 1.5em);
     padding: 0.8em;
     background-color: ${({ theme, isSelected }) => isSelected ? `${theme.colors.accent} !important` : theme.colors.liteGrayBg};
     font-weight: ${({ isSelected }) => isSelected ? '700' : '500'};
     border-radius: 3px;
     transition: background-color 0.2s ease-in-out;
+    font-family: Jost;
 
     :hover
     {
@@ -59,13 +61,14 @@ const MessageTextarea = styled.textarea`
 `
 
 const SendButton = styled.button`
-    font-size: clamp(1em, 1vw, 1.5em);
+    font-size: clamp(1.1em, 1vw, 1.5em);
     padding: 0.8em;
     background-color: ${({ theme }) => theme.colors.accent};
     font-weight: 700;
     border-radius: 3px;
     transition: background-color 0.2s ease-in-out;
-    
+    font-family: Jost;
+
     :hover
     {
         background-color: ${({ theme }) => theme.colors.accentHover};

@@ -4,7 +4,7 @@ export const colors = {
     whiteBg: '#FFFFFF',
     liteGrayBg: '#F6F6F6',
     liteGrayBgHover: '#EBEBEB',
-    darkFont: '#3F3F3F',
+    darkFont: '#111111',
     semiDarkFont: '#7C7C7C',
     liteFont: '#F8F8F8',
 }
