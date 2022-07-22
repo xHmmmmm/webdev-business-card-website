@@ -27,7 +27,7 @@ export default function Header()
 
     return (
         <Wrapper>
-            {isMobile || <Topbar />}
+            {!isMobile && <Topbar />}
             {isMobile ? <MobileNavigation /> : <Navbar />}
         </Wrapper>
     )
