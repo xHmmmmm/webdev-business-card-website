@@ -32,6 +32,13 @@ module.exports = {
             },
         },
         "gatsby-plugin-root-import",
+        {
+            resolve: "gatsby-plugin-styled-components",
+            options: {
+                displayName: true,
+                pure: true
+            },
+        },
 
         // this (optional) plugin enables Progressive Web App + Offline functionality
         // To learn more, visit: https://gatsby.dev/offline
