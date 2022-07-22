@@ -12,7 +12,7 @@ const Wrapper = styled.div`
 const StepNumber = styled.p`
     background-color: ${({ theme }) => theme.colors.accent};
     color: ${({ theme }) => theme.colors.liteFont};
-    font-size: clamp(1.1em, 1.1vw, 1.6em);
+    font-size: clamp(1em, 1.1vw, 1.6em);
     padding: clamp(0.3em, 0.7vw, 0.7em);
     font-weight: 600;
     border-radius: 4px;
@@ -22,8 +22,9 @@ const Title = styled.h3`
     text-align: center;
     white-space: pre-wrap;
     font-size: clamp(1.1em, 1.1vw, 2em);
-    font-weight: 900;
+    font-weight: 700;
     width: 80%;
+    /* font-family: Montserrat */
 `
 
 const Text = styled.p`

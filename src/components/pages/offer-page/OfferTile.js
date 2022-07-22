@@ -10,6 +10,7 @@ const Wrapper = styled.div`
     {            
         :hover
         {
+            cursor: default;
             p, svg
             {
                 background-position: 0 -100%;

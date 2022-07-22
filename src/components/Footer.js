@@ -18,7 +18,9 @@ const ContentContainer = styled(ContentWrapper)`
     'copyright info'
     'imageNotice info';
     align-items: center;
-    padding: 0 5em;
+    max-width: 1000px;
+    max-height: 80%;
+    padding: 0;
     gap: 0.7em;
 
     @media (max-width: ${({ theme }) => theme.mobileScreen}) 
@@ -34,7 +36,7 @@ const ContentContainer = styled(ContentWrapper)`
 
 const CopyrightNotice = styled.p`
     grid-area: copyright;
-    font-size: 2em;
+    font-size: clamp(1em, 7vw, 2em);
     color: ${({ theme }) => theme.colors.liteFont};
     font-weight: 700;
     align-self: flex-end;
@@ -53,7 +55,10 @@ const ContactInformation = styled.div`
     display: grid;
     grid-template-columns: min-content min-content;
     grid-auto-rows: min-content;
-    gap: 1em;
+    gap: 1rem;
+    align-items: center;
+
+    font-size: clamp(1em, 5vw, 1.3em);
 
     > svg
     {
@@ -64,16 +69,16 @@ const ContactInformation = styled.div`
 
     @media (max-width: ${({ theme }) => theme.mobileScreen}) 
     {
-        gap: 0.5em;
-        margin-top: 2em;
+        gap: 0.5rem;
+        margin-top: 1em;
     }
 `
 
 const InfoText = styled.p`
-    font-size: 1.2rem;
+    font-size: 1em;
     font-weight: 500;
     color: ${({ theme }) => theme.colors.liteFont};
-    line-height: 1.3;
+    /* line-height: 1.3; */
 `
 
 export default function Footer()

@@ -1,6 +1,7 @@
 export const colors = {
     accent: '#FFAD32',
     accentHover: '#DE9018',
+    navAccent: '#f0a22e',
     whiteBg: '#FFFFFF',
     liteGrayBg: '#F6F6F6',
     liteGrayBgHover: '#EBEBEB',

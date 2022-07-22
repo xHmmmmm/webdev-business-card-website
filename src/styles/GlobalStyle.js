@@ -34,7 +34,7 @@ export const GlobalStyle = createGlobalStyle`
         -webkit-tap-highlight-color: transparent;
         margin: 0;
         padding: 0;
-        font-family: Ubuntu;
+        font-family: Montserrat;
         color: ${({ theme }) => theme.colors.darkFont};
     }
 

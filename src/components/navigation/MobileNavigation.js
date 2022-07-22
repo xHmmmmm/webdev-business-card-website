@@ -22,7 +22,7 @@ const ExpandButton = styled.button`
     padding: 1.2rem;
     border-radius: 50%;
     font-size: 1.8rem;
-    background-color: ${({ theme, isExpanded }) => isExpanded ? theme.colors.accentHover : theme.colors.accent};
+    background-color: ${({ theme, isExpanded }) => isExpanded ? theme.colors.accentHover : theme.colors.navAccent};
     pointer-events: initial;
     transition: all 0.2s ease-in-out, background-color 0.3s ease-in-out;
     transition-property: height, width, background-color;
@@ -36,7 +36,7 @@ const ExpandButton = styled.button`
         content: '';
         bottom: -9rem;
         right: -16.5rem;
-        background-color: ${({ theme }) => theme.colors.accent};
+        background-color: ${({ theme }) => theme.colors.navAccent};
         opacity: 0.8;
         border-radius: inherit;
         height: ${({ isExpanded }) => isExpanded ? '30rem' : '0'};
