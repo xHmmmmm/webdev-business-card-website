@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 
-import Layout from "../components/Layout"
-import Seo from "../components/Seo"
+import Layout from "components/Layout"
+import Seo from "components/Seo"
 import StartPage from '../components/pages/start-page/StartPage'
 import OfferPage from '../components/pages/offer-page/OfferPage'
 import StepsPage from '../components/pages/steps-page/StepsPage'
