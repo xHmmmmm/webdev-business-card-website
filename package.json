@@ -21,7 +21,8 @@
         "react-helmet": "^6.1.0",
         "react-icons": "^4.3.1",
         "react-intersection-observer": "^9.3.5",
-        "styled-components": "^5.3.5"
+        "styled-components": "^5.3.5",
+        "gatsby-plugin-root-import": "^2.0.8"
     },
     "devDependencies": {
         "gatsby-plugin-root-import": "^2.0.8",
